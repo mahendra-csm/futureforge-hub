@@ -78,9 +78,9 @@ const RegistrationForm = () => {
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="grid lg:grid-cols-[340px_1fr] gap-8 items-start">
 
-          {/* Left sidebar — info panel */}
+          {/* Left sidebar — info panel (desktop only) */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-24">
+            className="hidden lg:block lg:sticky lg:top-24">
             {/* Company logo */}
             <div className="mb-5">
               <img src={logo} alt="OneGrasp" className="h-10 sm:h-12 object-contain" />
@@ -123,11 +123,12 @@ const RegistrationForm = () => {
 
           {/* Right — form card */}
           <motion.form
+            id="registration-form"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-2 border-gray-200"
+            className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-2 border-gray-200 scroll-mt-16"
           >
             <div className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-3">

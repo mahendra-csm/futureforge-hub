@@ -99,19 +99,19 @@ export const StickyCountdownBanner = () => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed top-0 left-0 right-0 z-50 bg-[#1A56DB] text-white shadow-lg"
         >
-          <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-xs md:text-sm">
-              <Clock className="w-4 h-4 text-white/80 flex-shrink-0" />
+          <div className="max-w-6xl mx-auto px-3 md:px-4 py-2 md:py-2.5 flex items-center justify-between gap-2 md:gap-4">
+            <div className="flex items-center gap-1.5 md:gap-3 text-[10px] md:text-sm shrink-0" style={{ maxWidth: "30%" }}>
+              <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/80 flex-shrink-0 hidden sm:block" />
               <span className="font-medium hidden sm:inline">Offer ends in:</span>
-              <div className="flex items-center gap-1.5 font-mono font-bold">
-                <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(hours).padStart(2, "0")}h</span>
+              <div className="flex items-center gap-1 md:gap-1.5 font-mono font-bold">
+                <span className="bg-white/20 px-1 md:px-1.5 py-0.5 rounded text-[10px] md:text-xs">{String(hours).padStart(2, "0")}h</span>
                 <span className="text-white/50">:</span>
-                <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(minutes).padStart(2, "0")}m</span>
+                <span className="bg-white/20 px-1 md:px-1.5 py-0.5 rounded text-[10px] md:text-xs">{String(minutes).padStart(2, "0")}m</span>
                 <span className="text-white/50">:</span>
-                <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(seconds).padStart(2, "0")}s</span>
+                <span className="bg-white/20 px-1 md:px-1.5 py-0.5 rounded text-[10px] md:text-xs">{String(seconds).padStart(2, "0")}s</span>
               </div>
             </div>
-            <a href="#registration" className="px-4 py-1.5 rounded-lg bg-white text-[#1A56DB] text-xs font-semibold hover:bg-gray-50 transition-all whitespace-nowrap">
+            <a href="#registration" className="flex-1 md:flex-none text-center px-4 py-2 md:py-1.5 rounded-lg bg-white text-[#1A56DB] text-xs font-bold hover:bg-gray-50 transition-all whitespace-nowrap shadow-sm">
               Register Now →
             </a>
           </div>

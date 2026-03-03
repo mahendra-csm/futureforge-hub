@@ -111,7 +111,14 @@ const RegistrationForm = () => {
               ))}
             </div>
 
-            <p className="text-[11px] text-gray-400">📧 support@onegrasp.com &nbsp;·&nbsp; 📞 +91 89777 60441</p>
+            <div className="flex flex-wrap items-center gap-3 mt-1">
+              <a href="mailto:support@onegrasp.com" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1A56DB] text-xs font-semibold hover:bg-blue-100 transition-colors">
+                📧 support@onegrasp.com
+              </a>
+              <a href="tel:+918977760441" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-semibold hover:bg-emerald-100 transition-colors">
+                📞 +91 89777 60441
+              </a>
+            </div>
           </motion.div>
 
           {/* Right — form card */}

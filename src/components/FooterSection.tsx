@@ -29,10 +29,10 @@ const FooterSection = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-900 text-sm mb-3">Contact</h4>
             <div className="space-y-3 text-sm text-gray-500">
-              <a href="tel:+918977760441" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
+              <a href="tel:+918977760441" className="flex items-center gap-2 text-[#059669] font-semibold hover:text-[#047857] transition-colors">
                 <Phone className="w-4 h-4" /> +91 89777 60441 / 42 / 43
               </a>
-              <a href="mailto:support@onegrasp.com" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
+              <a href="mailto:support@onegrasp.com" className="flex items-center gap-2 text-[#1A56DB] font-semibold hover:text-[#1648B5] transition-colors">
                 <Mail className="w-4 h-4" /> support@onegrasp.com
               </a>
               <a href="https://wa.me/918977760441" target="_blank" rel="noopener noreferrer"

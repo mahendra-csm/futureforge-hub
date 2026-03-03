@@ -25,35 +25,25 @@ const CollaborationsSection = () => {
   return (
     <section className="section-padding gradient-section-alt" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-4"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Global <span className="text-gradient-gold">Collaborations</span> & Accreditation
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
+            Global <span className="text-gradient-orange">Collaborations</span> & Accreditation
           </h2>
           <div className="flex items-center justify-center gap-3 mb-10">
-            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-primary/15 text-primary">Accredited</span>
-            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-accent/15 text-accent">Recognized</span>
-            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-primary/15 text-primary">Globally Indexed</span>
+            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-light text-primary">Accredited</span>
+            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-orange-light text-accent">Recognized</span>
+            <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-emerald-light text-primary">Globally Indexed</span>
           </div>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {collaborators.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="glass-card glass-card-hover rounded-xl p-6 text-center transition-all duration-300"
-            >
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+              className="glass-card glass-card-hover rounded-2xl p-6 text-center transition-all duration-300">
               <div className="h-16 flex items-center justify-center mb-4">
                 <img src={c.logo} alt={c.name} className="max-h-14 max-w-[140px] object-contain" />
               </div>
-              <h4 className="font-bold text-foreground mb-2 font-serif">{c.name}</h4>
+              <h4 className="font-bold text-foreground mb-2">{c.name}</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">{c.desc}</p>
             </motion.div>
           ))}

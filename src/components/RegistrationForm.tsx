@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { MessageCircle, ExternalLink, ScrollText, Globe, Send, ShieldCheck } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -60,11 +60,41 @@ const WEB3FORMS_KEY = "6dea2bb5-2738-49ad-badc-11f252014b54";
 
 const RegistrationForm = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const thankYouRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ fullName: "", email: "" });
   const [codeSearch, setCodeSearch] = useState("");
+
+  /* On mobile, intercept #registration clicks and scroll directly to form card */
+  useEffect(() => {
+    const isMobile = () => window.innerWidth < 1024;
+    const handleClick = (e: MouseEvent) => {
+      if (!isMobile()) return;
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a[href="#registration"]') || target.closest('a[href*="registration"]');
+      if (anchor && formRef.current) {
+        e.preventDefault();
+        const top = formRef.current.getBoundingClientRect().top + window.scrollY - 48;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    };
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
+  }, []);
+
+  /* Scroll thank-you card into view on mobile after submission */
+  useEffect(() => {
+    if (submitted && thankYouRef.current) {
+      setTimeout(() => {
+        if (!thankYouRef.current) return;
+        const top = thankYouRef.current.getBoundingClientRect().top + window.scrollY - 48;
+        window.scrollTo({ top, behavior: "smooth" });
+      }, 100);
+    }
+  }, [submitted]);
 
   const filteredCodes = codeSearch
     ? countryCodes.filter(c => c.country.toLowerCase().includes(codeSearch.toLowerCase()) || c.code.includes(codeSearch))
@@ -116,7 +146,7 @@ const RegistrationForm = () => {
   if (submitted) {
     return (
       <section id="registration" className="section-padding gradient-section-alt relative" ref={ref}>
-        <div className="relative z-10 max-w-lg mx-auto text-center">
+        <div ref={thankYouRef} className="relative z-10 max-w-lg mx-auto text-center">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="bg-white rounded-2xl p-10 border border-gray-100 shadow-lg">
             <div className="w-16 h-16 rounded-full border-2 border-[#059669] flex items-center justify-center mx-auto mb-5">
@@ -194,12 +224,13 @@ const RegistrationForm = () => {
 
           {/* Right — form card */}
           <motion.form
+            ref={formRef}
             id="registration-form"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-2 border-gray-200 scroll-mt-16"
+            className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-2 border-gray-200 scroll-mt-12"
           >
             <div className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-3">

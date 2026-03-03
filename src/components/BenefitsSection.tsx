@@ -1,35 +1,54 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronDown, Award, BookOpen, BadgeCheck, Mic, Database, Search, Gift } from "lucide-react";
+import { ChevronDown, Award, Mic } from "lucide-react";
 import certificateImg from "@/assets/blur.png";
+import logoCrossref from "@/assets/logo-rmetahub.png";
+import logoCpdImg from "@/assets/logo-doi.png";
+import logoMetaspectra from "@/assets/logo-metaspectra.png";
 
-const benefits = [
+/* Google Scholar SVG icon */
+const GoogleScholarIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+  </svg>
+);
+
+type BenefitItem = {
+  icon?: React.ComponentType<{ className?: string }>;
+  img?: string;
+  googleScholar?: boolean;
+  title: string;
+  subtitle: string;
+  detail: string;
+};
+
+const benefits: BenefitItem[] = [
   {
     icon: Award,
     title: "Certificate of Participation / Presentation",
     subtitle: "Awarded after submitting post-conference feedback",
-    detail: "Receive an internationally recognized, premium Certificate of Participation or Presentation issued by OneGrasp Scientific Conferences. The certificate bears your full name, role (Speaker / Presenter / Attendee), the conference name, date, and Certificate ID. It is accredited and suitable for academic CVs, LinkedIn profiles, and professional portfolios. Active contributors (speakers and presenters) receive a premium physical Commemorative Memento in addition to the digital certificate.",
+    detail: "Receive an internationally recognized, premium Certificate of Participation or Presentation issued by OneGrasp Scientific Conferences. The certificate bears your full name, role (Speaker / Presenter / Attendee), the conference name, date, and Certificate ID. It is accredited and suitable for academic CVs, LinkedIn profiles, and professional portfolios.",
   },
   {
-    icon: BookOpen,
+    img: logoCrossref,
     title: "DOI via Crossref — Make Your Research Permanent",
     subtitle: "Get a globally recognized Digital Object Identifier for your abstract",
     detail: "Every abstract accepted for presentation receives a unique DOI (Digital Object Identifier) issued through Crossref — the world's leading DOI registration agency trusted by 50,000+ publishers. Your DOI makes your research permanently citable, discoverable, and accessible across the global scholarly web. DOI prefix: 10.65838. This means your work enters the permanent scientific record and can be referenced in future publications, grant applications, and institutional reports.",
   },
   {
-    icon: BadgeCheck,
+    img: logoCpdImg,
     title: "CPD Accredited Certificate",
     subtitle: "Recognized for Continuing Professional Development",
     detail: "Participating in this conference counts toward your CPD (Continuing Professional Development) hours, accredited by TheCPD.Group — a globally recognized CPD accreditation body. The CPD certificate demonstrates your commitment to ongoing professional growth and is recognized by employers, professional bodies, and licensing authorities worldwide.",
   },
   {
-    icon: Search,
+    googleScholar: true,
     title: "Abstract Indexed in Google Scholar & 10+ Directories",
     subtitle: "Your research, discoverable globally",
     detail: "Submitted abstracts are indexed in Google Scholar and 10+ additional international indexing directories and databases, dramatically increasing the visibility and reach of your research. Indexing partners include Journal Citation Index, MetaSpectra (170M+ metadata records), RMetaHub, IntelliMindEd, and more.",
   },
   {
-    icon: Database,
+    img: logoMetaspectra,
     title: "Free Access to 170+ Million Metadata Records",
     subtitle: "Via MetaSpectra — an interdisciplinary knowledge ecosystem",
     detail: "All registered participants gain complimentary access to MetaSpectra's repository of over 170 million scholarly metadata records — spanning engineering, technology, environmental sciences, materials science, AI, and sustainability research.",
@@ -40,15 +59,9 @@ const benefits = [
     subtitle: "Your expertise on the international stage",
     detail: "Outstanding presenters and contributors identified during the conference may be personally invited to serve as a Keynote Speaker at future OneGrasp international conferences. This is a rare career-defining opportunity to establish yourself as a global thought leader.",
   },
-  {
-    icon: Gift,
-    title: "Commemorative Memento for Active Contributors",
-    subtitle: "A tangible token of your international contribution",
-    detail: "Speakers, presenters, and active contributors receive a premium Commemorative Memento — a physical keepsake recognizing your outstanding contribution to the conference.",
-  },
 ];
 
-const BenefitCard = ({ b, index }: { b: typeof benefits[0]; index: number }) => {
+const BenefitCard = ({ b, index }: { b: BenefitItem; index: number }) => {
   const [open, setOpen] = useState(false);
   return (
     <motion.div
@@ -60,8 +73,14 @@ const BenefitCard = ({ b, index }: { b: typeof benefits[0]; index: number }) => 
       onClick={() => setOpen(!open)}
     >
       <div className="flex items-start gap-4 p-5">
-        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
-          <b.icon className="w-5 h-5 text-[#1A56DB]" />
+        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors overflow-hidden">
+          {b.img ? (
+            <img src={b.img} alt="" className="w-7 h-7 object-contain" />
+          ) : b.googleScholar ? (
+            <GoogleScholarIcon className="w-5 h-5 text-[#1A56DB]" />
+          ) : b.icon ? (
+            <b.icon className="w-5 h-5 text-[#1A56DB]" />
+          ) : null}
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold text-gray-900 text-sm md:text-base leading-snug">{b.title}</h4>
@@ -126,16 +145,16 @@ const BenefitsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* Left — Benefits */}
+        <div className="grid lg:grid-cols-[1fr_380px] gap-10 items-start">
+          {/* Benefits */}
           <div className="space-y-3">
             {benefits.map((b, i) => (
               <BenefitCard key={i} b={b} index={i} />
             ))}
           </div>
 
-          {/* Right — Certificate */}
-          <div className="lg:sticky lg:top-24">
+          {/* Certificate Preview */}
+          <div className="hidden lg:block lg:sticky lg:top-28">
             <CertificatePreview />
           </div>
         </div>

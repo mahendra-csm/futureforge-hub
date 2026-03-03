@@ -5,7 +5,6 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CollaborationsSection from "@/components/CollaborationsSection";
 import ThemesSection from "@/components/ThemesSection";
 import AbstractSection from "@/components/AbstractSection";
-import CertificateSection from "@/components/CertificateSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import ScientificCommitteeSection from "@/components/ScientificCommitteeSection";
 import RegistrationForm from "@/components/RegistrationForm";
@@ -24,7 +23,6 @@ const Index = () => {
       <CollaborationsSection />
       <ThemesSection />
       <AbstractSection />
-      <CertificateSection />
       <WhyChooseSection />
       <ScientificCommitteeSection />
       <RegistrationForm />

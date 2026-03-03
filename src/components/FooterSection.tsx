@@ -14,7 +14,7 @@ const FooterSection = () => {
             <div className="mb-4 flex items-center gap-3">
               <img src={logo} alt="IC-ETSS Logo" className="h-10 w-auto" />
               <div>
-                <span className="text-2xl font-bold text-gray-900">One<span className="text-[#1A56DB]">Grasp</span></span>
+                <span className="text-2xl font-bold"><span className="text-gray-400">One</span><span className="text-red-600">Grasp</span></span>
                 <p className="text-xs text-gray-400 mt-0.5 italic">Empowering Global Academic Excellence</p>
               </div>
             </div>
@@ -22,6 +22,7 @@ const FooterSection = () => {
               International Conference on Engineering, Technology & Sustainable Solutions
             </p>
             <p className="text-sm text-gray-500">📅 11th & 12th March 2026 · Online</p>
+            <p className="text-sm text-gray-500">🕗 08:00 AM – 12:00 PM IST</p>
             <p className="text-xs text-gray-400 mt-6">© 2026 OneGrasp Scientific Conferences. All Rights Reserved.</p>
           </div>
 
@@ -29,13 +30,13 @@ const FooterSection = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-900 text-sm mb-3">Contact</h4>
             <div className="space-y-3 text-sm text-gray-500">
-              <a href="tel:+918977760441" className="flex items-center gap-2 text-[#059669] font-semibold hover:text-[#047857] transition-colors">
-                <Phone className="w-4 h-4" /> +91 89777 60441 / 42 / 43
+              <a href="tel:+918977760443" className="flex items-center gap-2 text-[#059669] font-semibold hover:text-[#047857] transition-colors">
+                <Phone className="w-4 h-4" /> +91 89777 60443
               </a>
               <a href="mailto:support@onegrasp.com" className="flex items-center gap-2 text-[#1A56DB] font-semibold hover:text-[#1648B5] transition-colors">
                 <Mail className="w-4 h-4" /> support@onegrasp.com
               </a>
-              <a href="https://wa.me/918977760441" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#25D366] transition-colors">
                 <MessageCircle className="w-4 h-4" /> WhatsApp Chat →
               </a>

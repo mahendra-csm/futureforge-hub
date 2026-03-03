@@ -1,6 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Calendar, Globe2, Mic, Users, ArrowRight, Zap, BookOpen, Shield, CheckCircle2 } from "lucide-react";
+import { Calendar, Globe2, Mic, Users, ArrowRight, CheckCircle2 } from "lucide-react";
+import logoCrossref from "@/assets/logo-rmetahub.png";
+import logoCpdImg from "@/assets/logo-doi.png";
+import logoMetaspectra from "@/assets/logo-metaspectra.png";
+
+/* Google Scholar SVG icon */
+const GoogleScholarIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+  </svg>
+);
 
 /* ── Animated counter ── */
 const AnimCounter = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
@@ -25,10 +35,10 @@ const AnimCounter = ({ target, suffix = "" }: { target: number; suffix?: string 
 };
 
 const pillars = [
-  { icon: BookOpen, title: "Crossref DOI", desc: "Permanent citation for every accepted abstract", color: "#1A56DB", bg: "bg-blue-50", border: "border-blue-100" },
-  { icon: Shield, title: "CPD Accredited", desc: "Globally recognized professional certification", color: "#059669", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { icon: Globe2, title: "10+ Directories", desc: "Indexed on Google Scholar & major databases", color: "#D97706", bg: "bg-amber-50", border: "border-amber-100" },
-  { icon: Zap, title: "170M+ Records", desc: "Free MetaSpectra scholarly access for all participants", color: "#7C3AED", bg: "bg-violet-50", border: "border-violet-100" },
+  { img: logoCrossref, title: "Crossref DOI", desc: "Permanent citation for every accepted abstract", color: "#1A56DB", bg: "bg-blue-50", border: "border-blue-100" },
+  { img: logoCpdImg, title: "CPD Accredited", desc: "Globally recognized professional certification", color: "#059669", bg: "bg-emerald-50", border: "border-emerald-100" },
+  { isGoogleScholar: true, title: "10+ Directories", desc: "Indexed on Google Scholar & major databases", color: "#D97706", bg: "bg-amber-50", border: "border-amber-100" },
+  { img: logoMetaspectra, title: "170M+ Records", desc: "Free MetaSpectra scholarly access for all participants", color: "#7C3AED", bg: "bg-violet-50", border: "border-violet-100" },
 ];
 
 const AboutSection = () => {
@@ -47,10 +57,6 @@ const AboutSection = () => {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
           className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#1A56DB] animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A56DB]">1st Edition · Virtual · Global</span>
-          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900">
             About <span className="text-gradient-blue">IC-ETSS 2026</span>
           </h2>
@@ -74,23 +80,23 @@ const AboutSection = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900">The Conference</h3>
-                <p className="text-xs text-gray-400">2-Day International Virtual Event</p>
+                <p className="text-xs text-gray-400">2-Day International Online Event</p>
               </div>
             </div>
 
             <p className="text-gray-600 text-[15px] leading-relaxed mb-5">
-              This conference addresses urgent challenges at the intersection of <span className="text-[#1A56DB] font-semibold">engineering innovation</span> and <span className="text-[#059669] font-semibold">environmental sustainability</span> — from smart infrastructure and renewable energy to AI-powered climate solutions and green manufacturing.
+              This conference addresses urgent challenges at the intersection of <span className="text-[#1A56DB] font-semibold">Engineering Innovation</span> and <span className="text-[#059669] font-semibold">Environmental Sustainability</span> — from smart Infrastructure and Renewable energy to AI-powered climate solutions and green manufacturing.
             </p>
             <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
-              The 1st Edition brings together a global community of engineers, researchers, industry pioneers, policy shapers, and students in a dynamic two-day virtual format — featuring presentations, panel discussions, and live Q&A sessions.
+              This brings together a global community of Engineers, Researchers, Industry Pioneers, Policy Shapers, and Students in a dynamic online format — featuring presentations, panel discussions, and live Q&A sessions.
             </p>
 
             {/* Inline stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
                 { value: 170, suffix: "M+", label: "Metadata Records", color: "text-[#7C3AED]", bg: "bg-violet-50" },
-                { value: 7, suffix: "", label: "Partners", color: "text-[#1A56DB]", bg: "bg-blue-50" },
-                { value: 50, suffix: "+", label: "Countries", color: "text-[#059669]", bg: "bg-emerald-50" },
+                { value: 7, suffix: "", label: "International Collaborations", color: "text-[#1A56DB]", bg: "bg-blue-50" },
+                { value: 100, suffix: "+", label: "Countries", color: "text-[#059669]", bg: "bg-emerald-50" },
                 { value: 2, suffix: "", label: "Days", color: "text-[#D97706]", bg: "bg-amber-50" },
               ].map((s, i) => (
                 <div key={i} className={`${s.bg} rounded-xl p-3 text-center border border-gray-100`}>
@@ -131,8 +137,8 @@ const AboutSection = () => {
               <h4 className="text-sm font-bold text-[#D97706] uppercase tracking-wider mb-3">Event Details</h4>
               <div className="space-y-3">
                 {[
-                  { icon: Calendar, text: "11–12 March 2026", sub: "Two full days", color: "#1A56DB" },
-                  { icon: Globe2, text: "100% Virtual", sub: "Join from anywhere", color: "#059669" },
+                  { icon: Calendar, text: "11–12 March 2026", sub: "08:00 AM – 12:00 PM IST", color: "#1A56DB" },
+                  { icon: Globe2, text: "100% Online", sub: "Join from anywhere", color: "#059669" },
                   { icon: Users, text: "Open to All", sub: "Students to experts", color: "#D97706" },
                 ].map((d, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -159,8 +165,12 @@ const AboutSection = () => {
               transition={{ duration: 0.45, delay: 0.3 + i * 0.08 }}
               className={`group ${p.bg} rounded-2xl border ${p.border} p-5 hover:shadow-md transition-all duration-300`}
             >
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3 bg-white shadow-sm">
-                <p.icon className="w-5 h-5" style={{ color: p.color }} />
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3 bg-white shadow-sm overflow-hidden">
+                {p.img ? (
+                  <img src={p.img} alt="" className="w-7 h-7 object-contain" />
+                ) : p.isGoogleScholar ? (
+                  <GoogleScholarIcon className="w-6 h-6 text-[#D97706]" />
+                ) : null}
               </div>
               <h4 className="text-sm font-bold text-gray-900 mb-1">{p.title}</h4>
               <p className="text-xs text-gray-500 leading-relaxed">{p.desc}</p>

@@ -3,21 +3,22 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Flame, Award, BookOpen, Users } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-/* Sharp 4K engineering hero from Unsplash */
-const HERO_BG = "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=3840&q=95";
+/* Conference audience / professionals grouped — Unsplash */
+const HERO_BG = " https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=3840&q=95";
 
-/* ── Countdown Timer ── */
+/* ── Countdown Timer (counts to midnight today) ── */
 const CountdownTimer = () => {
-  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const target = new Date("2026-03-11T08:00:00+05:30").getTime();
     const tick = () => {
-      const diff = target - Date.now();
+      const now = new Date();
+      const midnight = new Date(now);
+      midnight.setHours(24, 0, 0, 0);
+      const diff = midnight.getTime() - now.getTime();
       if (diff <= 0) return;
       setTime({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff / 3600000) % 24),
+        hours: Math.floor(diff / 3600000),
         minutes: Math.floor((diff / 60000) % 60),
         seconds: Math.floor((diff / 1000) % 60),
       });
@@ -29,7 +30,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex justify-center gap-2.5 md:gap-4">
-      {(["days", "hours", "minutes", "seconds"] as const).map((unit) => (
+      {(["hours", "minutes", "seconds"] as const).map((unit) => (
         <div key={unit} className="bg-white/10 backdrop-blur-md rounded-xl p-2.5 sm:p-3 md:p-4 min-w-[56px] sm:min-w-[64px] md:min-w-[80px] text-center border border-white/20">
           <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white tabular-nums">
             {String(time[unit]).padStart(2, "0")}
@@ -72,8 +73,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.05 }}
           className="flex justify-center mb-6"
         >
-          <div className="bg-white rounded-2xl px-8 py-4 md:px-12 md:py-5 shadow-xl">
-            <img src={logo} alt="OneGrasp" className="h-16 sm:h-20 md:h-24 object-contain" />
+          <div className="bg-white rounded-2xl px-10 py-5 md:px-16 md:py-6 shadow-xl">
+            <img src={logo} alt="OneGrasp" className="h-20 sm:h-28 md:h-36 object-contain" />
           </div>
         </motion.div>
 
@@ -85,7 +86,7 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm"
         >
           <span className="text-[11px] md:text-xs font-medium tracking-wide text-white/80">
-            🌍 VIRTUAL INTERNATIONAL CONFERENCE · ACCREDITED · PEER-REVIEWED
+            🌍 ONLINE INTERNATIONAL CONFERENCE · ACCREDITED · PEER-REVIEWED
           </span>
         </motion.div>
 
@@ -96,9 +97,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4 text-white"
         >
-          International Conference on<br />
-          Engineering, Technology &<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-200 to-cyan-300">Sustainable Solutions</span>
+          <span className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white/80">International Conference on</span><br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Engineering, Technology &</span><br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Sustainable Solutions</span>
         </motion.h1>
 
         {/* Subtitle with value prop */}
@@ -108,7 +109,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white/80 text-sm md:text-base max-w-2xl mx-auto mb-5 leading-relaxed"
         >
-          Get your research a <span className="text-white font-semibold">Crossref DOI</span>, <span className="text-white font-semibold">CPD accreditation</span>, indexed in <span className="text-white font-semibold">10+ global directories</span>, and an accredited certificate — all in one conference.
+          Get your research a <span className="text-white font-semibold">Crossref DOI</span>, <span className="text-white font-semibold">CPD accreditation</span>, indexed in <span className="text-white font-semibold">10+ global directories</span>, <span className="text-white font-semibold">170+ million metadata record access</span>, and an accredited certificate — all in one conference, all at <span className="text-white font-semibold">affordable prices</span>.
         </motion.p>
 
         {/* Event meta */}
@@ -118,11 +119,11 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-6 text-sm text-white/80 font-mono"
         >
-          <span>📅 11–12 March 2026</span>
+          <span className="font-bold text-white">📅 11–12 March 2026</span>
           <span className="text-white/30">·</span>
-          <span>🕗 08:00 AM – 12:00 PM IST</span>
+          <span className="font-bold text-white">🕗 08:00 AM – 12:00 PM IST</span>
           <span className="text-white/30">·</span>
-          <span>🌐 Online</span>
+          <span className="font-bold text-white">🌐 Online</span>
         </motion.div>
 
         {/* Countdown */}
@@ -132,7 +133,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-6"
         >
-          <p className="text-white/70 text-xs uppercase tracking-widest mb-2 font-medium">Registration closes in</p>
+          <p className="text-white/70 text-xs uppercase tracking-widest mb-2 font-medium">Today's offer ends in</p>
           <CountdownTimer />
         </motion.div>
 
@@ -147,6 +148,18 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg bg-gradient-to-r from-[#1A56DB] to-[#2563EB] text-white hover:from-[#1648B5] hover:to-[#1A56DB] transition-all animate-cta-pulse shadow-[0_4px_20px_rgba(26,86,219,0.4)]">
             Register & Grab Your Benefits →
           </a>
+        </motion.div>
+
+        {/* No visa quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.48 }}
+          className="mb-5"
+        >
+          <div className="inline-block px-5 py-2.5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
+            <p className="text-white/90 text-xs sm:text-sm italic">"No visa needed · No flights · No cancellations — <span className="text-sky-300 font-semibold not-italic">attend from anywhere, 100% online</span>"</p>
+          </div>
         </motion.div>
 
         {/* Benefit pills */}

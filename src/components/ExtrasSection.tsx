@@ -2,15 +2,15 @@ import { useState, useEffect, useCallback } from "react";
 import { MessageCircle, X, Clock, AlertTriangle, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ── Countdown hook ── */
-const CONFERENCE_DATE = new Date("2026-03-11T09:00:00+05:30").getTime();
-
+/* ── Countdown hook (midnight-based, same as hero) ── */
 function useCountdown() {
   const calc = useCallback(() => {
-    const diff = Math.max(0, CONFERENCE_DATE - Date.now());
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const diff = Math.max(0, midnight.getTime() - now.getTime());
     return {
-      days: Math.floor(diff / 86400000),
-      hours: Math.floor((diff % 86400000) / 3600000),
+      hours: Math.floor(diff / 3600000),
       minutes: Math.floor((diff % 3600000) / 60000),
       seconds: Math.floor((diff % 60000) / 1000),
       total: diff,
@@ -26,10 +26,9 @@ function useCountdown() {
 
 /* ── Seats Closing Countdown Alert (section) ── */
 export const UrgencyBar = () => {
-  const { days, hours, minutes, seconds } = useCountdown();
+  const { hours, minutes, seconds } = useCountdown();
 
   const boxes: { value: number; label: string }[] = [
-    { value: days, label: "Days" },
     { value: hours, label: "Hours" },
     { value: minutes, label: "Mins" },
     { value: seconds, label: "Secs" },
@@ -44,11 +43,11 @@ export const UrgencyBar = () => {
         {/* Alert badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold mb-5">
           <AlertTriangle className="w-3.5 h-3.5" />
-          <span>Limited Virtual Seats — Registration Closing Soon</span>
+          <span>Limited Online Seats — Registration Closing Soon</span>
         </div>
 
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-          Conference Starts In
+          Today's Offer Ends In
         </h3>
         <p className="text-white/70 text-sm mb-6">11th & 12th March 2026 · Online</p>
 
@@ -79,7 +78,7 @@ export const UrgencyBar = () => {
 
 /* ── Sticky Top Countdown Banner (appears on scroll) ── */
 export const StickyCountdownBanner = () => {
-  const { days, hours, minutes, seconds, total } = useCountdown();
+  const { hours, minutes, seconds, total } = useCountdown();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -103,10 +102,8 @@ export const StickyCountdownBanner = () => {
           <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-xs md:text-sm">
               <Clock className="w-4 h-4 text-white/80 flex-shrink-0" />
-              <span className="font-medium hidden sm:inline">Seats closing in:</span>
+              <span className="font-medium hidden sm:inline">Offer ends in:</span>
               <div className="flex items-center gap-1.5 font-mono font-bold">
-                <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(days).padStart(2, "0")}d</span>
-                <span className="text-white/50">:</span>
                 <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(hours).padStart(2, "0")}h</span>
                 <span className="text-white/50">:</span>
                 <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">{String(minutes).padStart(2, "0")}m</span>
@@ -126,8 +123,8 @@ export const StickyCountdownBanner = () => {
 
 /* ── WhatsApp Floating Button ── */
 export const WhatsAppButton = () => (
-  <a href="https://wa.me/918977760441" target="_blank" rel="noopener noreferrer"
-    className="fixed bottom-6 right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-semibold text-sm shadow-xl hover:scale-105 transition-transform animate-bounce-gentle"
+  <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
+    className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-semibold text-sm shadow-xl hover:scale-105 transition-transform animate-bounce-gentle"
     style={{ boxShadow: "0 6px 28px rgba(37,211,102,0.5)" }}
     aria-label="Chat on WhatsApp">
     <MessageCircle className="w-6 h-6" />
@@ -238,11 +235,8 @@ export const SlideInNotification = () => {
 /* ── Sticky Bottom Mobile Bar ── */
 export const StickyMobileBar = () => (
   <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
-    <div className="flex items-center justify-between px-4 py-3">
-      <div className="text-xs text-gray-500">
-        📅 Mar 11–12, 2026 · Online
-      </div>
-      <a href="#registration" className="px-4 py-2 rounded-lg bg-[#1A56DB] text-white text-xs font-semibold hover:bg-[#1646B8] transition-all">
+    <div className="px-4 py-3">
+      <a href="#registration" className="block w-full py-3 rounded-xl bg-gradient-to-r from-[#1A56DB] to-[#2563EB] text-white text-sm font-bold text-center hover:from-[#1648B5] hover:to-[#1A56DB] transition-all shadow-lg">
         Register Now →
       </a>
     </div>

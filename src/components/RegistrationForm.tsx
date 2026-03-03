@@ -39,8 +39,8 @@ const RegistrationForm = () => {
     setTimeout(() => { setLoading(false); setSubmitted(true); }, 1500);
   };
 
-  const inputClass = "w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all duration-200 focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none placeholder:text-gray-300";
-  const selectClass = "w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-gray-500 text-sm transition-all duration-200 appearance-none focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none";
+  const inputClass = "w-full bg-white border-2 border-gray-300 rounded-xl px-4 py-3 text-gray-900 text-sm font-medium transition-all duration-200 focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none placeholder:text-gray-400";
+  const selectClass = "w-full bg-white border-2 border-gray-300 rounded-xl px-4 py-3 text-gray-700 text-sm font-medium transition-all duration-200 appearance-none focus:bg-white focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none";
 
   if (submitted) {
     return (
@@ -58,7 +58,7 @@ const RegistrationForm = () => {
             <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">IC-ETSS 2026</span>.</p>
             <p className="text-gray-500 mb-6 text-sm">We'll reach out at <span className="text-gray-900">{formData.email}</span> within 24 hours.</p>
             <div className="space-y-2.5">
-              <a href="https://wa.me/918977760441" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1FB855] transition-all">
                 <MessageCircle className="w-4 h-4" /> Join WhatsApp Community
               </a>
@@ -74,7 +74,7 @@ const RegistrationForm = () => {
   }
 
   return (
-    <section id="registration" className="section-padding relative overflow-hidden bg-gradient-to-br from-[#F0F4FF] via-white to-[#F5F7FA]" ref={ref}>
+    <section id="registration" className="section-padding relative overflow-hidden bg-gradient-to-br from-[#F0F4FF] via-white to-[#F5F7FA] scroll-mt-20" ref={ref}>
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="grid lg:grid-cols-[340px_1fr] gap-8 items-start">
 
@@ -115,8 +115,8 @@ const RegistrationForm = () => {
               <a href="mailto:support@onegrasp.com" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1A56DB] text-xs font-semibold hover:bg-blue-100 transition-colors">
                 📧 support@onegrasp.com
               </a>
-              <a href="tel:+918977760441" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-semibold hover:bg-emerald-100 transition-colors">
-                📞 +91 89777 60441
+              <a href="tel:+918977760443" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-semibold hover:bg-emerald-100 transition-colors">
+                📞 +91 89777 60443
               </a>
             </div>
           </motion.div>
@@ -132,30 +132,30 @@ const RegistrationForm = () => {
             <div className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Full Name *</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Full Name *</label>
                   <input name="fullName" required className={inputClass} />
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Email Address *</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Email Address *</label>
                   <input name="email" type="email" required className={inputClass} />
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Phone Number *</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Phone Number *</label>
                   <input name="phone" type="tel" required className={inputClass} />
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Profession / Designation</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Profession / Designation</label>
                   <input name="profession" className={inputClass} />
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Country *</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Country *</label>
                   <select name="country" required className={selectClass} defaultValue="">
                     <option value="" disabled>Select country</option>
                     {countries.map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-gray-500 mb-1 block">Current Role</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1 block">Current Role</label>
                   <select name="role" className={selectClass} defaultValue="">
                     <option value="" disabled>Select role</option>
                     {roles.map(r => <option key={r} value={r}>{r}</option>)}
@@ -164,7 +164,7 @@ const RegistrationForm = () => {
               </div>
 
               <div>
-                <label className="text-[11px] font-medium text-gray-500 mb-1 block">How did you hear about us?</label>
+                <label className="text-xs font-semibold text-gray-700 mb-1 block">How did you hear about us?</label>
                 <select name="referral" className={selectClass} defaultValue="">
                   <option value="" disabled>Select source</option>
                   {referralSources.map(s => <option key={s} value={s}>{s}</option>)}
@@ -172,7 +172,7 @@ const RegistrationForm = () => {
               </div>
 
               <div>
-                <label className="text-[11px] font-medium text-gray-500 mb-1 block">Questions or Comments</label>
+                <label className="text-xs font-semibold text-gray-700 mb-1 block">Questions or Comments</label>
                 <textarea name="comments" rows={2} className={inputClass} />
               </div>
 

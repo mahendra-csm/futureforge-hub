@@ -8,7 +8,7 @@ const benefits = [
   { icon: Award, title: "CPD Accredited Certificate", desc: "Recognized by employers and licensing authorities in 50+ countries", color: "from-amber-600 to-amber-700", bg: "bg-amber-50", border: "border-amber-200", iconBg: "bg-amber-600" },
   { icon: BookOpen, title: "Peer-Reviewed Publication", desc: "Your research evaluated and validated by international reviewers", color: "from-violet-600 to-violet-700", bg: "bg-violet-50", border: "border-violet-200", iconBg: "bg-violet-600" },
   { icon: Users, title: "Global Networking", desc: "Connect with researchers, engineers, and innovators from 50+ countries", color: "from-cyan-600 to-cyan-700", bg: "bg-cyan-50", border: "border-cyan-200", iconBg: "bg-cyan-600" },
-  { icon: TrendingUp, title: "Career Advancement", desc: "Strengthen your academic portfolio, CV, and professional recognition", color: "from-rose-600 to-rose-700", bg: "bg-rose-50", border: "border-rose-200", iconBg: "bg-rose-600" },
+  { icon: TrendingUp, title: "170M+ Metadata Records", desc: "Access 170+ million scholarly metadata records via MetaSpectra for your research", color: "from-rose-600 to-rose-700", bg: "bg-rose-50", border: "border-rose-200", iconBg: "bg-rose-600" },
 ];
 
 const AbstractSection = () => {
@@ -49,7 +49,7 @@ const AbstractSection = () => {
             Your research deserves <strong className="text-white">global recognition</strong>. One abstract submission gives you a <strong className="text-white">permanent DOI</strong>, indexing in <strong className="text-white">10+ directories</strong>, and an <strong className="text-white">accredited certificate</strong> — all at once.
           </p>
 
-          {/* ONLY IN INDIA banner */}
+          {/* WORLDWIDE banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -58,11 +58,11 @@ const AbstractSection = () => {
           >
             <div className="relative px-6 py-3 sm:px-8 sm:py-4 rounded-2xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 border-2 border-amber-400/50 backdrop-blur-sm">
               <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
-                <span className="text-2xl sm:text-3xl">🇮🇳</span>
+                <span className="text-2xl sm:text-3xl">🌍</span>
                 <div className="text-left">
-                  <p className="text-amber-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase">Exclusive in India</p>
+                  <p className="text-amber-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase">Worldwide Exclusive</p>
                   <p className="text-white text-sm sm:text-base md:text-lg font-extrabold leading-tight">
-                    No Other Organisation in India Offers <span className="text-amber-300">ALL These Benefits</span>
+                    No Other Organisation Worldwide Offers <span className="text-amber-300">ALL These Benefits</span>
                   </p>
                 </div>
                 <span className="text-2xl sm:text-3xl">🏆</span>
@@ -117,7 +117,7 @@ const AbstractSection = () => {
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {["DOI", "Indexing", "Certificate", "Publication", "Networking", "Career"].map((tag, i) => (
+              {["DOI", "Indexing", "Certificate", "Publication", "Networking", "170M+ Records"].map((tag, i) => (
                 <span key={i} className="px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold border border-white/20">
                   ✓ {tag}
                 </span>

@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import ParticipantsSection from "@/components/ParticipantsSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CollaborationsSection from "@/components/CollaborationsSection";
+import CallForPapersSection from "@/components/CallForPapersSection";
 import ThemesSection from "@/components/ThemesSection";
 import AbstractSection from "@/components/AbstractSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
@@ -21,6 +22,7 @@ const Index = () => {
       <ParticipantsSection />
       <BenefitsSection />
       <CollaborationsSection />
+      <CallForPapersSection />
       <ThemesSection />
       <AbstractSection />
       <WhyChooseSection />

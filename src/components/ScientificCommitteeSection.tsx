@@ -3,24 +3,14 @@ import { useRef } from "react";
 import { MapPin, Briefcase } from "lucide-react";
 
 /* ── Image imports ── */
-import imgChaturvedi from "@/assets/images/1-10.webp";
-import imgPraneetha from "@/assets/images/2-10.webp";
-import imgBright from "@/assets/images/BRIGHT-KESWANI.webp";
-import imgSanjay from "@/assets/images/3-10.webp";
-import imgVijay from "@/assets/images/4-10.webp";
-import imgMaha from "@/assets/images/5-10.webp";
-import imgSaiSuman from "@/assets/images/6-10.webp";
-import imgMaria from "@/assets/images/7-10.webp";
-import imgSrikanth from "@/assets/images/8-10.webp";
-import imgSudarshan from "@/assets/images/Dr.-SUDARSHAN-RAO-MECH.webp";
-import imgNalanda from "@/assets/images/Nalanda-Roy.webp";
-import imgNilesh from "@/assets/images/Untitled-design-5.webp";
-import imgHadi from "@/assets/images/Dr.-Hadi-Erfani.webp";
-import imgSatish from "@/assets/images/Dr.-S.-Satish.webp";
-import imgSubhash from "@/assets/images/Dr.-Subhash.webp";
-import imgAhmed from "@/assets/images/Dr.-Ahmed-Shaqr.webp";
-import imgBishnu from "@/assets/images/Dr.-Bishnu.webp";
-import imgChintan from "@/assets/images/Dr.-Chintan-Patel.webp";
+import imgSantosh from "@/assets/images/Dr.-Santosh-Mishra.webp";
+import imgDavid from "@/assets/images/1-11.webp";
+import imgNilesh from "@/assets/images/1-10.webp";
+import imgSaiSuman from "@/assets/images/2-10.webp";
+import imgMaria from "@/assets/images/3-10.webp";
+import imgManjunath from "@/assets/images/5-11.webp";
+import imgHeba from "@/assets/images/6-11.webp";
+import imgJuLee from "@/assets/images/Dr.-Ju-Lee-Kim.webp";
 
 interface Member {
   name: string;
@@ -31,112 +21,52 @@ interface Member {
 
 const members: Member[] = [
   {
-    name: "Prof. D.K. Chaturvedi",
-    role: "Dean, Faculty of Engineering — Dayalbagh Educational Institute",
+    name: "Dr. Santosh Kumar Mishra",
+    role: "Independent Researcher (Scholar), Population Education Resource Centre, Department of Lifelong Learning & Extension — S.N.D.T. Women's University",
     country: "India",
-    image: imgChaturvedi,
+    image: imgSantosh,
   },
   {
-    name: "Dr. Praneetha Kotla",
-    role: "Associate Principal / Lead Full-Stack Developer — Northern Illinois University",
-    country: "USA",
-    image: imgPraneetha,
+    name: "Dr. David Wortley",
+    role: "Non-Executive Director, WLMES; Vice President, ISDM; Director, IORMA Futures Health & Wellbeing Technology Centre; CEO & Founder, 360in360",
+    country: "United Kingdom",
+    image: imgDavid,
   },
   {
-    name: "Dr. Bright Keswani",
-    role: "Professor, Computer Science & Engineering — Poornima University, Jaipur",
+    name: "Dr. Nilesh Charankar",
+    role: "Lead Full-Stack Developer / Researcher / Author — Technology & Software Engineering",
     country: "India",
-    image: imgBright,
-  },
-  {
-    name: "Dr. Sanjay G. Patel",
-    role: "Professor, Computer Science & Engineering — Nirma University, Ahmedabad",
-    country: "India",
-    image: imgSanjay,
-  },
-  {
-    name: "Dr. Vijay Anant Athavale",
-    role: "Principal / Professor, Computer Science & Engineering — Walchand Institute of Technology",
-    country: "India",
-    image: imgVijay,
-  },
-  {
-    name: "Dr. Maha Fawzy Anber",
-    role: "Head of Sustainability Department / Associate Professor — El Shorouk Academy, Cairo",
-    country: "Egypt",
-    image: imgMaha,
+    image: imgNilesh,
   },
   {
     name: "Dr. Sai Suman Singamsetty",
-    role: "Data Management Specialist / Keynote Speaker — Centurion University of Technology",
+    role: "Data Management Specialist / Keynote Speaker / Independent Researcher — Electronics & Communication Engineering, Centurion University of Technology and Management",
     country: "India",
     image: imgSaiSuman,
   },
   {
     name: "Dr. Maria Cecilia Colautti",
-    role: "Secretary, ICOH Scientific Committee — Universidad Nacional de la Patagonia San Juan Bosco",
+    role: "Secretary, ICOH Scientific Committee on Nanomaterial Workers' Health, Occupational Health / Nanotechnology — Universidad Nacional de la Patagonia San Juan Bosco",
     country: "Argentina",
     image: imgMaria,
   },
   {
-    name: "Dr. Srikanth V",
-    role: "Professor / Program Coordinator, MCA Department — Acharya Bangalore B School",
+    name: "Dr. Manjunath G N",
+    role: "Professor & Head of Department, Pharmacology — Sri Siddhartha Medical College, Sri Siddhartha Academy of Higher Education",
     country: "India",
-    image: imgSrikanth,
+    image: imgManjunath,
   },
   {
-    name: "Dr. Sudarshan Rao K",
-    role: "Professor, Mechanical Engineering — SMVITM Bantakal",
-    country: "India",
-    image: imgSudarshan,
+    name: "Prof. Heba Afify",
+    role: "Professor / Associate Professor, Biomedical Engineering — Cairo University (PhD); Shorouk Academy / MTI University",
+    country: "Egypt",
+    image: imgHeba,
   },
   {
-    name: "Dr. Nalanda Roy",
-    role: "Full Professor, Political Science & International Studies — Georgia Southern University",
-    country: "USA",
-    image: imgNalanda,
-  },
-  {
-    name: "Dr. Nilesh Charankar",
-    role: "Lead Full-Stack Developer / Researcher / Author — Technology & Software Engineering",
-    country: "USA",
-    image: imgNilesh,
-  },
-  {
-    name: "Dr. Hadi Erfani",
-    role: "Research Scholar, Chemical Engineering — Islamic Azad University (Central Tehran Branch)",
-    country: "Iran",
-    image: imgHadi,
-  },
-  {
-    name: "Dr. S. Satish",
-    role: "Associate Professor, School of Aeronautical Sciences — Hindustan Institute of Technology and Science",
-    country: "India",
-    image: imgSatish,
-  },
-  {
-    name: "Dr. Subhash Ghimre",
-    role: "Associate Professor & Head of Department, Geomatics Engineering — Kathmandu University",
-    country: "Nepal",
-    image: imgSubhash,
-  },
-  {
-    name: "Dr. Ahmed M. Saqr",
-    role: "Visiting Lecturer & Researcher, Engineering & Applied Sciences — TH Köln",
-    country: "Germany",
-    image: imgAhmed,
-  },
-  {
-    name: "Dr. Bishnu Pada Bose",
-    role: "Professor, Partner & Advisor, Civil & Environmental Engineering — Invosystems",
-    country: "Singapore",
-    image: imgBishnu,
-  },
-  {
-    name: "Dr. Chintan Patel",
-    role: "Assistant Professor, Electrical Engineering — CVM University",
-    country: "India",
-    image: imgChintan,
+    name: "Dr. Ju Lee Kim",
+    role: "Senior Researcher, R&D Center, RedGene — Westfälische Wilhelms-Universität Münster",
+    country: "Republic of Korea",
+    image: imgJuLee,
   },
 ];
 
@@ -207,7 +137,7 @@ const ScientificCommitteeSection = () => {
             Scientific Committee <span className="text-gradient-blue">Members</span>
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
-            Distinguished professors, researchers, and industry leaders from across the globe guiding the scientific direction of IC-ETSS 2026.
+            Distinguished professors, researchers, and industry leaders from across the globe guiding the scientific direction of ICHMP 2026.
           </p>
         </motion.div>
 
@@ -227,9 +157,9 @@ const ScientificCommitteeSection = () => {
           className="mt-10 flex flex-wrap items-center justify-center gap-6 md:gap-12"
         >
           {[
-            { value: "18", label: "Committee Members" },
-            { value: "8+", label: "Countries Represented" },
-            { value: "15+", label: "Engineering Disciplines" },
+            { value: "8", label: "Committee Members" },
+            { value: "6", label: "Countries Represented" },
+            { value: "10+", label: "Healthcare Disciplines" },
           ].map((s, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl md:text-3xl font-extrabold text-[#1A56DB]">{s.value}</div>

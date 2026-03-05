@@ -58,10 +58,10 @@ const AboutSection = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
           className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900">
-            About <span className="text-gradient-blue">IC-ETSS 2026</span>
+            About <span className="text-gradient-blue">ICHMP 2026</span>
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
-            Where Engineering Excellence Meets a Sustainable Tomorrow
+            Advancing Healthcare, Medicine & Public Health for a Healthier Tomorrow
           </p>
         </motion.div>
 
@@ -85,10 +85,10 @@ const AboutSection = () => {
             </div>
 
             <p className="text-gray-600 text-[15px] leading-relaxed mb-5">
-              This conference addresses urgent challenges at the intersection of <span className="text-[#1A56DB] font-semibold">Engineering Innovation</span> and <span className="text-[#059669] font-semibold">Environmental Sustainability</span> — from smart Infrastructure and Renewable energy to AI-powered climate solutions and green manufacturing.
+              This conference addresses urgent challenges at the intersection of <span className="text-[#1A56DB] font-semibold">Healthcare Innovation</span> and <span className="text-[#059669] font-semibold">Public Health</span> — from medical breakthroughs and clinical research to AI-powered diagnostics, telemedicine, and global health policies.
             </p>
             <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
-              This brings together a global community of Engineers, Researchers, Industry Pioneers, Policy Shapers, and Students in a dynamic online format — featuring presentations, panel discussions, and live Q&A sessions.
+              This brings together a global community of Healthcare Professionals, Medical Researchers, Clinicians, Public Health Experts, and Students in a dynamic online format — featuring presentations, panel discussions, and live Q&A sessions.
             </p>
 
             {/* Inline stats */}

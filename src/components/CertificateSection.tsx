@@ -19,7 +19,7 @@ const CertificateSection = () => {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}>
             <div className="relative rounded-2xl p-1 animate-border-shimmer" style={{ border: "2px solid rgba(217,119,6,0.3)", background: "rgba(217,119,6,0.02)" }}>
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img src={blurImg} alt="IC-ETSS 2026 Certificate Preview" className="w-full h-auto" />
+                <img src={blurImg} alt="ICHMP 2026 Certificate Preview" className="w-full h-auto" />
               </div>
             </div>
             <p className="text-center text-[11px] text-gray-400 mt-2">* Personal details blurred for privacy</p>

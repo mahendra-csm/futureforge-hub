@@ -19,7 +19,7 @@ const FooterSection = () => {
               </div>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-2">
-              International Conference on Engineering, Technology & Sustainable Solutions
+              International Conference on Healthcare, Medicine & Public Health
             </p>
             <p className="text-sm text-gray-500">📅 11th & 12th March 2026 · Online</p>
             <p className="text-sm text-gray-500">🕗 08:00 AM – 12:00 PM IST</p>
@@ -36,7 +36,7 @@ const FooterSection = () => {
               <a href="mailto:support@onegrasp.com" className="flex items-center gap-2 text-[#1A56DB] font-semibold hover:text-[#1648B5] transition-colors">
                 <Mail className="w-4 h-4" /> support@onegrasp.com
               </a>
-              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20ICHMP%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#25D366] transition-colors">
                 <MessageCircle className="w-4 h-4" /> WhatsApp Chat →
               </a>
@@ -56,7 +56,7 @@ const FooterSection = () => {
           <div>
             <h4 className="font-semibold text-gray-900 text-sm mb-2">Terms & Conditions</h4>
             <p className="text-xs text-gray-500 leading-relaxed">
-              By registering for IC-ETSS 2026, participants agree to abide by the conference guidelines and policies. 
+              By registering for ICHMP 2026, participants agree to abide by the conference guidelines and policies. 
               All submitted papers must be original work and free from plagiarism. Registration fees are non-refundable 
               once payment is confirmed. The organizers reserve the right to modify the conference schedule or content 
               as deemed necessary.

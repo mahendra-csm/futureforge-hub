@@ -4,14 +4,14 @@ import { FileText, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const paperTopics = [
-  "Sustainable Energy Systems & Renewable Technologies",
-  "Artificial Intelligence & Machine Learning Applications",
-  "Green Engineering & Environmental Solutions",
-  "Smart Infrastructure & Urban Development",
-  "Advanced Materials & Nano-Engineering",
-  "Climate Technology & Carbon Neutrality",
-  "Digital Transformation & Industry 4.0",
-  "Sustainable Healthcare & Biomedical Engineering",
+  "Clinical Medicine & Patient Care Innovations",
+  "Mental Health & Psychiatry Research",
+  "Public Health & Epidemiology",
+  "AI & Machine Learning in Healthcare",
+  "Pharmaceutical Sciences & Drug Development",
+  "Nursing & Allied Health Sciences",
+  "Telemedicine & Digital Health Technologies",
+  "Global Health & Infectious Diseases",
 ];
 
 const CallForPapersSection = () => {

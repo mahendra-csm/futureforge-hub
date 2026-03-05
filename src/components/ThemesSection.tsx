@@ -1,16 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Zap, Cpu, Leaf, Building2, Microscope, Waves, Monitor, HeartPulse, ChevronRight } from "lucide-react";
+import { HeartPulse, Brain, Microscope, Pill, Stethoscope, Activity, Monitor, Users, ChevronRight } from "lucide-react";
 
 const tracks = [
-  { icon: Zap, title: "Sustainable Energy & Renewables", desc: "Solar, wind, hydrogen, and next-gen energy storage systems transforming global power infrastructure.", color: "#D97706", gradient: "from-amber-500 to-orange-500" },
-  { icon: Cpu, title: "AI, ML & Smart Systems", desc: "Intelligent automation, predictive maintenance, IoT-driven analytics, and edge computing.", color: "#1A56DB", gradient: "from-blue-600 to-indigo-600" },
-  { icon: Leaf, title: "Green Engineering & Env Tech", desc: "Eco-design, lifecycle assessment, pollution control, and circular economy strategies.", color: "#059669", gradient: "from-emerald-500 to-green-600" },
-  { icon: Building2, title: "Smart Infrastructure & Urban", desc: "Resilient cities, intelligent transport, digital water management, and smart grids.", color: "#0891B2", gradient: "from-cyan-500 to-teal-500" },
-  { icon: Microscope, title: "Advanced Materials & Manufacturing", desc: "Nanomaterials, additive manufacturing, composites, and sustainable production lines.", color: "#7C3AED", gradient: "from-violet-500 to-purple-600" },
-  { icon: Waves, title: "Climate Technology & Resilience", desc: "Carbon capture, climate modeling, disaster risk reduction, and adaptation engineering.", color: "#2563EB", gradient: "from-blue-500 to-sky-500" },
-  { icon: Monitor, title: "Digital Transformation & Industry 4.0", desc: "Digital twins, blockchain supply chains, cyber-physical systems, and smart factories.", color: "#DC2626", gradient: "from-red-500 to-rose-500" },
-  { icon: HeartPulse, title: "Sustainable Healthcare Engineering", desc: "Medical devices, green hospital design, biomedical innovations, and health infrastructure.", color: "#DB2777", gradient: "from-pink-500 to-fuchsia-500" },
+  { icon: HeartPulse, title: "Clinical Medicine & Cardiology", desc: "Cardiovascular research, diagnostic innovations, surgical advancements, and patient care protocols.", color: "#DC2626", gradient: "from-red-500 to-rose-500" },
+  { icon: Brain, title: "Mental Health & Neuroscience", desc: "Psychiatry, psychology, neurological disorders, cognitive therapies, and brain research.", color: "#7C3AED", gradient: "from-violet-500 to-purple-600" },
+  { icon: Microscope, title: "Medical Research & Diagnostics", desc: "Laboratory medicine, biomarkers, genomics, precision diagnostics, and pathology.", color: "#1A56DB", gradient: "from-blue-600 to-indigo-600" },
+  { icon: Pill, title: "Pharmaceutical Sciences", desc: "Drug discovery, clinical trials, pharmacology, drug delivery systems, and therapeutics.", color: "#059669", gradient: "from-emerald-500 to-green-600" },
+  { icon: Stethoscope, title: "Primary Care & Family Medicine", desc: "Preventive care, chronic disease management, patient-centered approaches, and community health.", color: "#0891B2", gradient: "from-cyan-500 to-teal-500" },
+  { icon: Activity, title: "Public Health & Epidemiology", desc: "Disease surveillance, outbreak response, health policy, vaccination strategies, and population health.", color: "#D97706", gradient: "from-amber-500 to-orange-500" },
+  { icon: Monitor, title: "Digital Health & Telemedicine", desc: "AI diagnostics, remote patient monitoring, health informatics, and virtual care platforms.", color: "#2563EB", gradient: "from-blue-500 to-sky-500" },
+  { icon: Users, title: "Nursing & Allied Health", desc: "Nursing research, rehabilitation sciences, physiotherapy, and healthcare workforce development.", color: "#DB2777", gradient: "from-pink-500 to-fuchsia-500" },
 ];
 
 const ThemesSection = () => {
@@ -27,7 +27,7 @@ const ThemesSection = () => {
             Key Themes & <span className="text-gradient-blue">Research Tracks</span>
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
-            Explore cutting-edge research domains shaping the future of engineering and sustainability.
+            Explore cutting-edge research domains shaping the future of healthcare, medicine, and public health.
           </p>
         </motion.div>
 
@@ -70,7 +70,7 @@ const ThemesSection = () => {
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-8">
           <p className="text-sm text-gray-400">
-            All topics related to engineering, technology & sustainability are welcome.{" "}
+            All topics related to healthcare, medicine & public health are welcome.{" "}
             <a href="#registration" className="text-[#1A56DB] font-medium hover:underline">Submit your abstract →</a>
           </p>
         </motion.div>

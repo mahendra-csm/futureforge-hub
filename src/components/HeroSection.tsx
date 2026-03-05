@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Flame, Award, BookOpen, Users } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-/* Conference audience / professionals grouped — Unsplash */
-const HERO_BG = " https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=3840&q=95";
+/* Healthcare/Medical professionals - Clear high-quality image */
+const HERO_BG = "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=3840&q=100";
 
 /* ── Countdown Timer (counts to midnight today) ── */
 const CountdownTimer = () => {
@@ -98,8 +98,8 @@ const HeroSection = () => {
           className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4 text-white"
         >
           <span className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white/80">International Conference on</span><br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Engineering, Technology &</span><br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Sustainable Solutions</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Healthcare Medicine&</span><br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Public Health</span>
         </motion.h1>
 
         {/* Subtitle with value prop */}

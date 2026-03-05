@@ -1,52 +1,52 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Wrench, GraduationCap, Factory, Landmark, Briefcase } from "lucide-react";
+import { Stethoscope, GraduationCap, Building2, Landmark, Briefcase } from "lucide-react";
 
 const participants = [
   {
-    icon: Wrench,
-    title: "Engineers & Technologists",
-    headline: "Pioneer Sustainable Engineering",
-    desc: "Discover breakthroughs in green engineering, climate-resilient infrastructure, renewable energy, and smart manufacturing from global experts.",
+    icon: Stethoscope,
+    title: "Healthcare Professionals",
+    headline: "Advance Clinical Practice",
+    desc: "Discover breakthroughs in medical treatments, patient care innovations, telemedicine, and healthcare delivery systems from global experts.",
     color: "#1A56DB",
     gradient: "from-blue-600 to-blue-500",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=90",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=90",
   },
   {
     icon: GraduationCap,
-    title: "Researchers & Academics",
+    title: "Medical Researchers & Academics",
     headline: "Publish, Present & Collaborate",
     desc: "Submit your abstract, receive a permanent Crossref DOI, get indexed on 10+ directories including Google Scholar, and connect globally.",
     color: "#0891B2",
     gradient: "from-cyan-600 to-teal-500",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=90",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=90",
   },
   {
-    icon: Factory,
-    title: "Industry Leaders & Innovators",
-    headline: "Showcase Your Solutions",
-    desc: "Position your organization at the forefront of sustainable innovation. Present digital transformation case studies to a global audience.",
+    icon: Building2,
+    title: "Pharma & Healthcare Industry",
+    headline: "Showcase Your Innovations",
+    desc: "Position your organization at the forefront of healthcare innovation. Present case studies on drug development and medical technologies.",
     color: "#059669",
     gradient: "from-emerald-600 to-green-500",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=90",
+    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=90",
   },
   {
     icon: Landmark,
-    title: "Policy Makers & Officials",
-    headline: "Shape the Future Framework",
-    desc: "Gain insights into global engineering standards, sustainability frameworks, and technology governance from researchers and technologists.",
+    title: "Public Health Officials",
+    headline: "Shape Health Policy",
+    desc: "Gain insights into global health standards, epidemiology frameworks, and public health governance from researchers and practitioners.",
     color: "#7C3AED",
     gradient: "from-violet-600 to-purple-500",
     image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=800&q=90",
   },
   {
     icon: Briefcase,
-    title: "Students & Early Careers",
-    headline: "Launch Your Global Career",
-    desc: "Present research internationally, earn accredited certificates, connect with mentors and recruiters, and explore sustainability career paths.",
+    title: "Medical Students & Residents",
+    headline: "Launch Your Medical Career",
+    desc: "Present research internationally, earn accredited certificates, connect with mentors and recruiters, and explore healthcare career paths.",
     color: "#D97706",
     gradient: "from-amber-600 to-orange-500",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=90",
+    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=90",
   },
 ];
 
@@ -63,7 +63,7 @@ const ParticipantsSection = () => {
             This Conference Is <span className="text-gradient-blue">Built For You</span>
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
-            Whether you're a seasoned researcher or an aspiring engineer, there's a seat at this table for you.
+            Whether you're a seasoned clinician or an aspiring medical researcher, there's a seat at this table for you.
           </p>
         </motion.div>
 

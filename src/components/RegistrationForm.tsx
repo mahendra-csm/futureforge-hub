@@ -115,8 +115,8 @@ const RegistrationForm = () => {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New IC-ETSS 2026 Registration: ${fullName}`,
-          from_name: "IC-ETSS 2026 Registration",
+          subject: `New ICHMP 2026 Registration: ${fullName}`,
+          from_name: "International Conference on Healthcare, Medicine & Public Health",
           name: fullName,
           email: email,
           phone: `${data.get("countryCode") || ""} ${data.get("phone") || ""}`.trim(),
@@ -156,10 +156,10 @@ const RegistrationForm = () => {
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900">Thank You, {formData.fullName?.split(" ")[0] || "there"}!</h3>
-            <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">IC-ETSS 2026</span>.</p>
+            <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">International Conference on Healthcare, Medicine & Public Health 2026</span>.</p>
             <p className="text-gray-500 mb-6 text-sm">We'll reach out at <span className="text-gray-900">{formData.email}</span> within 24 hours.</p>
             <div className="space-y-2.5">
-              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20ICHMP%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1FB855] transition-all">
                 <MessageCircle className="w-4 h-4" /> Join WhatsApp Community
               </a>
@@ -188,7 +188,7 @@ const RegistrationForm = () => {
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 text-gray-900 leading-tight">
-              Secure Your Spot at <span className="text-gradient-blue">IC-ETSS 2026</span>
+              Secure Your Spot at <span className="text-gradient-blue">International Conference on Healthcare, Medicine & Public Health 2026</span>
             </h2>
             <p className="text-gray-500 text-sm mb-6 leading-relaxed">
               Fill in your details and our team will reach out within 24 hours with full conference details.

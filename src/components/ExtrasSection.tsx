@@ -123,7 +123,7 @@ export const StickyCountdownBanner = () => {
 
 /* ── WhatsApp Floating Button ── */
 export const WhatsAppButton = () => (
-  <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20ICHMP%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
     className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-semibold text-sm shadow-xl hover:scale-105 transition-transform animate-bounce-gentle"
     style={{ boxShadow: "0 6px 28px rgba(37,211,102,0.5)" }}
     aria-label="Chat on WhatsApp">
@@ -171,7 +171,7 @@ export const ExitIntentPopup = () => {
             <button onClick={close} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors">
               <X className="w-5 h-5" />
             </button>
-            <h3 className="text-xl font-bold mb-2 text-gray-900">Wait — Don't Miss IC-ETSS 2026!</h3>
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Wait — Don't Miss ICHMP 2026!</h3>
             <p className="text-sm text-gray-500 mb-6">Register your interest in 30 seconds and we'll send you full details.</p>
             <form onSubmit={(e) => { e.preventDefault(); close(); document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" }); }}
               className="space-y-3">

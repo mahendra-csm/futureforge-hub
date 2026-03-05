@@ -47,12 +47,12 @@ const FooterSection = () => {
               <a href="#registration" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
                 <ExternalLink className="w-4 h-4" /> Register Now
               </a>
-              <a href="#terms" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
-                <ExternalLink className="w-4 h-4" /> Terms & Conditions
-              </a>
-              <a href="#privacy" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
-                <ExternalLink className="w-4 h-4" /> Privacy Policy
-              </a>
+              <span className="flex items-center gap-2">
+                Terms & Conditions
+              </span>
+              <span className="flex items-center gap-2">
+                Privacy Policy
+              </span>
             </div>
           </div>
         </div>

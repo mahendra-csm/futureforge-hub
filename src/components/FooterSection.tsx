@@ -47,13 +47,29 @@ const FooterSection = () => {
               <a href="#registration" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
                 <ExternalLink className="w-4 h-4" /> Register Now
               </a>
-              <span className="flex items-center gap-2">
-                Terms & Conditions
-              </span>
-              <span className="flex items-center gap-2">
-                Privacy Policy
-              </span>
             </div>
+          </div>
+        </div>
+
+        {/* Terms & Privacy Section */}
+        <div className="mt-10 pt-8 border-t border-gray-200 grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">Terms & Conditions</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              By registering for IC-ETSS 2026, participants agree to abide by the conference guidelines and policies. 
+              All submitted papers must be original work and free from plagiarism. Registration fees are non-refundable 
+              once payment is confirmed. The organizers reserve the right to modify the conference schedule or content 
+              as deemed necessary.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-900 text-sm mb-2">Privacy Policy</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              We respect your privacy and are committed to protecting your personal data. Information collected during 
+              registration is used solely for conference-related communications and services. We do not share your 
+              personal information with third parties without your consent. All data is stored securely and handled 
+              in accordance with applicable data protection regulations.
+            </p>
           </div>
         </div>
       </div>

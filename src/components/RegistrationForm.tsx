@@ -159,7 +159,7 @@ const RegistrationForm = () => {
             <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">IC-ETSS 2026</span>.</p>
             <p className="text-gray-500 mb-6 text-sm">We'll reach out at <span className="text-gray-900">{formData.email}</span> within 24 hours.</p>
             <div className="space-y-2.5">
-              <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1FB855] transition-all">
                 <MessageCircle className="w-4 h-4" /> Join WhatsApp Community
               </a>

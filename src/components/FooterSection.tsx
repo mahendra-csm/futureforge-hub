@@ -36,7 +36,7 @@ const FooterSection = () => {
               <a href="mailto:support@onegrasp.com" className="flex items-center gap-2 text-[#1A56DB] font-semibold hover:text-[#1648B5] transition-colors">
                 <Mail className="w-4 h-4" /> support@onegrasp.com
               </a>
-              <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#25D366] transition-colors">
                 <MessageCircle className="w-4 h-4" /> WhatsApp Chat →
               </a>
@@ -46,6 +46,12 @@ const FooterSection = () => {
             <div className="space-y-2 text-sm text-gray-500">
               <a href="#registration" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
                 <ExternalLink className="w-4 h-4" /> Register Now
+              </a>
+              <a href="#terms" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
+                <ExternalLink className="w-4 h-4" /> Terms & Conditions
+              </a>
+              <a href="#privacy" className="flex items-center gap-2 hover:text-[#1A56DB] transition-colors">
+                <ExternalLink className="w-4 h-4" /> Privacy Policy
               </a>
             </div>
           </div>

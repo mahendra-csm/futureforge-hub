@@ -123,7 +123,7 @@ export const StickyCountdownBanner = () => {
 
 /* ── WhatsApp Floating Button ── */
 export const WhatsAppButton = () => (
-  <a href="https://wa.me/918977760443" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20IC-ETSS%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
     className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-semibold text-sm shadow-xl hover:scale-105 transition-transform animate-bounce-gentle"
     style={{ boxShadow: "0 6px 28px rgba(37,211,102,0.5)" }}
     aria-label="Chat on WhatsApp">

@@ -177,6 +177,7 @@ export const ExitIntentPopup = () => {
               className="space-y-3">
               <input placeholder="Your Name" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none transition-all" />
               <input type="email" placeholder="Your Email" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none transition-all" />
+              <input type="tel" placeholder="Your Mobile Number" required className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#1A56DB] focus:ring-2 focus:ring-blue-100 outline-none transition-all" />
               <button type="submit" className="w-full py-3 rounded-xl bg-[#1A56DB] text-white font-semibold text-sm hover:bg-[#1646B8] transition-all shadow-lg">
                 Notify Me
               </button>

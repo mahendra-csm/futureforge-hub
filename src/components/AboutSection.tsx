@@ -58,7 +58,7 @@ const AboutSection = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
           className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900">
-            About <span className="text-gradient-blue">ICHMP 2026</span>
+            About <span className="text-gradient-blue">IC-NMPC 2026</span>
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
             Advancing Healthcare, Medicine & Public Health for a Healthier Tomorrow
@@ -137,7 +137,7 @@ const AboutSection = () => {
               <h4 className="text-sm font-bold text-[#D97706] uppercase tracking-wider mb-3">Event Details</h4>
               <div className="space-y-3">
                 {[
-                  { icon: Calendar, text: "11–12 March 2026", sub: "08:00 AM – 12:00 PM IST", color: "#1A56DB" },
+                  { icon: Calendar, text: "15–16 April 2026", sub: "08:00 AM – 12:00 PM IST", color: "#1A56DB" },
                   { icon: Globe2, text: "100% Online", sub: "Join from anywhere", color: "#059669" },
                   { icon: Users, text: "Open to All", sub: "Students to experts", color: "#D97706" },
                 ].map((d, i) => (

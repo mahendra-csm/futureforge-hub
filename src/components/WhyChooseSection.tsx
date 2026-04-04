@@ -82,7 +82,7 @@ const WhyChooseSection = () => {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
               className="text-center pt-2">
               <a href="#registration" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1A56DB] text-white font-semibold text-sm hover:bg-[#1648B5] transition-all shadow-lg">
-                Join IC-ETSS 2026 →
+                Join IC-NMPC 2026 →
               </a>
             </motion.div>
           </div>

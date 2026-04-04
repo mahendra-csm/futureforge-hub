@@ -156,14 +156,14 @@ const RegistrationForm = () => {
               </svg>
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900">Thank You, {formData.fullName?.split(" ")[0] || "there"}!</h3>
-            <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">International Conference on Healthcare, Medicine & Public Health 2026</span>.</p>
+            <p className="text-gray-500 mb-2 text-sm">You're officially on the list for <span className="text-[#1A56DB] font-semibold">International Conference on Nursing, Midwifery & Patient Care (IC-NMPC 2026)</span>.</p>
             <p className="text-gray-500 mb-6 text-sm">We'll reach out at <span className="text-gray-900">{formData.email}</span> within 24 hours.</p>
             <div className="space-y-2.5">
               <a href="https://wa.me/918977760443?text=Hello!%20I'm%20interested%20in%20ICHMP%202026.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1FB855] transition-all">
                 <MessageCircle className="w-4 h-4" /> Join WhatsApp Community
               </a>
-              <a href="https://onegrasp.com/conference-events/international-conference-on-engineering-technology-sustainable-solutions/" target="_blank" rel="noopener noreferrer"
+              <a href="https://onegrasp.com/conference-events/international-conference-on-nursing-midwifery-patient-care/" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-gray-200 text-gray-700 font-semibold text-sm hover:bg-gray-50 transition-all">
                 <ExternalLink className="w-4 h-4" /> Visit Conference Page
               </a>

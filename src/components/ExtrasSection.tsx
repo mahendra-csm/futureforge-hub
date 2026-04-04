@@ -6,9 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 function useCountdown() {
   const calc = useCallback(() => {
     const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0);
-    const diff = Math.max(0, midnight.getTime() - now.getTime());
+   const TEN_MIN = 10 * 60 * 1000;
+const diff = TEN_MIN - (now.getTime() % TEN_MIN);
     return {
       hours: Math.floor(diff / 3600000),
       minutes: Math.floor((diff % 3600000) / 60000),
@@ -49,7 +48,7 @@ export const UrgencyBar = () => {
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
           Today's Offer Ends In
         </h3>
-        <p className="text-white/70 text-sm mb-6">11th & 12th March 2026 · Online</p>
+        <p className="text-white/70 text-sm mb-6">15th & 16th April 2026 · Online</p>
 
         {/* Countdown boxes */}
         <div className="flex items-center justify-center gap-3 md:gap-4 mb-8">

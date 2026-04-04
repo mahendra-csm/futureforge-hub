@@ -188,7 +188,7 @@ const RegistrationForm = () => {
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 text-gray-900 leading-tight">
-              Secure Your Spot at <span className="text-gradient-blue">International Conference on Healthcare, Medicine & Public Health 2026</span>
+              Secure Your Spot at <span className="text-gradient-blue">International Conference on Nursing, Midwifery & Patient Care (IC-NMPC 2026)</span>
             </h2>
             <p className="text-gray-500 text-sm mb-6 leading-relaxed">
               Fill in your details and our team will reach out within 24 hours with full conference details.

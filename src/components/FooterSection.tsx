@@ -19,9 +19,9 @@ const FooterSection = () => {
               </div>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-2">
-              International Conference on Healthcare, Medicine & Public Health
+International Conference on Nursing, Midwifery & Patient Care (IC-NMPC 2026)
             </p>
-            <p className="text-sm text-gray-500">📅 11th & 12th March 2026 · Online</p>
+            <p className="text-sm text-gray-500">📅 15th & 16th April 2026 · Online</p>
             <p className="text-sm text-gray-500">🕗 08:00 AM – 12:00 PM IST</p>
             <p className="text-xs text-gray-400 mt-6">© 2026 OneGrasp Scientific Conferences. All Rights Reserved.</p>
           </div>

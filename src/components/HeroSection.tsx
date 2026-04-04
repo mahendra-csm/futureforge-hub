@@ -13,9 +13,8 @@ const CountdownTimer = () => {
   useEffect(() => {
     const tick = () => {
       const now = new Date();
-      const midnight = new Date(now);
-      midnight.setHours(24, 0, 0, 0);
-      const diff = midnight.getTime() - now.getTime();
+     const TEN_MIN = 10 * 60 * 1000;
+const diff = TEN_MIN - (now.getTime() % TEN_MIN);
       if (diff <= 0) return;
       setTime({
         hours: Math.floor(diff / 3600000),
@@ -98,8 +97,8 @@ const HeroSection = () => {
           className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] mb-4 text-white"
         >
           <span className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white/80">International Conference on</span><br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Healthcare Medicine&</span><br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Public Health</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Nursing, Midwifery & </span><br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-cyan-300">Patient Care (IC-NMPC 2026)</span>
         </motion.h1>
 
         {/* Subtitle with value prop */}
@@ -119,7 +118,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-6 text-sm text-white/80 font-mono"
         >
-          <span className="font-bold text-white">📅 11–12 March 2026</span>
+          <span className="font-bold text-white">📅 15–16 April 2026</span>
           <span className="text-white/30">·</span>
           <span className="font-bold text-white">🕗 08:00 AM – 12:00 PM IST</span>
           <span className="text-white/30">·</span>
